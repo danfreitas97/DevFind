@@ -5,8 +5,6 @@ const NivelControl = require('../controllers/NivelControl.js');
 
 const router = Router();
 
-router.get('/busca', (req, res) => res.send('Tela de Busca'))
-
 router.get('/busca/user', UsersControl.selectAllUsers)
 
 router.get('/busca/user/:user', UsersControl.selectOneUsers)
