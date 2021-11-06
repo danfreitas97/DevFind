@@ -44,9 +44,17 @@ module.exports = {
     },
 
     {
+      userId: 'Tonio',
+      skillId: 'Java',
+      nivel: 'junior',
+      createdAt: new Date(),
+      updatedAt: new Date()  
+    },
+
+    {
       userId: 'dunga',
-      skillId: 'Go',
-      nivel: 'senior',
+      skillId: 'CSS',
+      nivel: 'pleno',
       createdAt: new Date(),
       updatedAt: new Date()  
     },

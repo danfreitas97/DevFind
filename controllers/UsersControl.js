@@ -1,4 +1,5 @@
 const database = require('../models')
+const bcrypt = require('bcrypt')
 
 class UsersControl{
     static async selectAllUsers (req, res){
@@ -25,7 +26,8 @@ class UsersControl{
     static async createUsers (req, res){
         const newUsers = req.body
         try {
-            const newUsersOk = await database.users.create(newUsers)
+            const senhaHash = await UsersControl.hashin(newUsers.senha)
+            const newUsersOk = await database.users.create({...newUsers, senha: senhaHash})
             return res.status(200).json(newUsersOk)
             
         }
@@ -34,8 +36,14 @@ class UsersControl{
         }
     }
 
+    static async hashin (senha) {
+        const cost = 12;
+        return bcrypt.hash (senha, cost);
+    }
+
     static async updateUsers (req, res){
-        const {user} = req.params
+        const paramObj = req.params
+        let user = paramObj.user
         const newUpdate = req.body
         try {
             await database.users.update(newUpdate, {where: { user : user }} )
@@ -57,6 +65,7 @@ class UsersControl{
             return res.status(404).json(error.message)
         }
     }
+
 }
 
 module.exports = UsersControl;
