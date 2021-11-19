@@ -50,12 +50,11 @@ class UserSkillsControl{
     }
 
     static async updateUserSkills (req, res){
-        const paramObj = req.params
-        let skillId = paramObj.skill
         const newUpdate = req.body
+        const { skillId, userId } = req.body
         try {
-            await database.user_skills.update(newUpdate, {where: { skillId : skillId }} )
-            const updatedSkills = await database.skills.findOne( {where: { skillId : skillId }})
+            await database.user_skills.update(newUpdate, {where: { skillId, userId}} )
+            const updatedSkills = await database.user_skills.findOne( {where: { skillId, userId }})
             return res.status(200).json(updatedSkills)            
         }
         catch(error){
@@ -64,11 +63,10 @@ class UserSkillsControl{
     }
 
     static async deleteUserSkills (req, res){
-        const paramObj = req.params
-        let skillId = paramObj.skill
+        const { skillId, userId } = req.body
         try {
-            await database.user_skills.destroy({where: { skillId : skillId }})
-            return res.status(200).json({alert: `skill ${skillId} was deleted`})            
+            await database.user_skills.destroy({where: { skillId, userId }})
+            return res.status(200).json({alert: `skill ${skillId} was deleted from ${userId}`})            
         }
         catch(error){
             return res.status(404).json(error.message)

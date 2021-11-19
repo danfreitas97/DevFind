@@ -1,7 +1,10 @@
-const express = require('express');
-const routes = require('./routes');
-const passport = require('passport');
+const express = require('express')
+const routes = require('./routes')
+const passport = require('passport')
 const database = require('./models')
+require('./config/passport-jwt')()
+
+
 
 const app = express();
 
