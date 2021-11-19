@@ -46,7 +46,13 @@ class UsersControl{
         let user = paramObj.user
         const newUpdate = req.body
         try {
-            await database.users.update(newUpdate, {where: { user : user }} )
+            let senhaHash
+
+            if (newUpdate.senha) {
+                senhaHash = await UsersControl.hashin(newUpdate.senha)
+            }
+
+            await database.users.update({...newUpdate, senha: senhaHash || newUpdate.senha}, {where: { user : user }} )
             const updatedUsers = await database.users.findOne( {where: { user : user }})
             return res.status(200).json(updatedUsers)            
         }
