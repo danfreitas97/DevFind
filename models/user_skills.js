@@ -12,8 +12,24 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {}
   };
   user_skills.init({
-    nivel: DataTypes.STRING
-  }, {
+    nivel: DataTypes.STRING,
+
+    userId: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      primaryKey: true,
+      references: {model: 'users', key: 'user'},
+    },
+
+    skillId: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      primaryKey: true,
+      references: {model: 'skills', key: 'skill'},
+    }
+  },
+  
+  {
     sequelize,
     modelName: 'user_skills',
   });

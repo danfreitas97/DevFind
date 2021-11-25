@@ -3,12 +3,6 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('users', {
 
-      id: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        unique: false
-      },
-
       user: {
         primaryKey: true,
         allowNull: false,
@@ -38,8 +32,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BOOLEAN
       },
-      redefin: {
+      redefinToken: {
         type: Sequelize.STRING
+      },
+      redefinExpires:{
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,

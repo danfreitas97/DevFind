@@ -55,6 +55,26 @@ module.exports = {
       skill: 'Go',
       createdAt: new Date(),
       updatedAt: new Date()    
+    },
+    {
+      skill: 'Elixir',
+      createdAt: new Date(),
+      updatedAt: new Date()    
+    },
+    {
+      skill: 'Ruby',
+      createdAt: new Date(),
+      updatedAt: new Date()    
+    },
+    {
+      skill: 'Clojure',
+      createdAt: new Date(),
+      updatedAt: new Date()    
+    },
+    {
+      skill: 'Rust',
+      createdAt: new Date(),
+      updatedAt: new Date()    
     }
   ],
    {});

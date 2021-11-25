@@ -4,8 +4,6 @@ const UserSkillsControl = require('../controllers/UserSkillsControl.js');
 
 const router = Router();
 
-router.get('/cadastro', (req, res) => res.send('Tela de Cadastro'))
-
 router.post('/cadastro', UsersControl.createUsers)
 
 router.post('/cadastro/skills', UserSkillsControl.addUserSkills)

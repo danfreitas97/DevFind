@@ -7,10 +7,9 @@ module.exports = {
       nome: 'Daniel Freitas',
       email: 'danfreitas@cabrero.com',
       senha: 'cabrunco',
-      telefone: 40028922,
+      telefone: 5561992713489,
       linkedin: 'linkedin.com/danielofreitas',
       ativo: true,
-      redefin: null,
       createdAt: new Date(),
       updatedAt: new Date()    
     },
@@ -22,7 +21,6 @@ module.exports = {
       telefone: 40028922,
       linkedin: 'linkedin.com/saulindumal',
       ativo: true,
-      redefin: null,
       createdAt: new Date(),
       updatedAt: new Date()    
     },
@@ -34,19 +32,17 @@ module.exports = {
       telefone: 40028922,
       linkedin: 'linkedin.com/tonindumal',
       ativo: true,
-      redefin: null,
       createdAt: new Date(),
       updatedAt: new Date()    
     },
     {
       user: 'dunga',
-      nome: 'dunga testudo',
+      nome: 'Dunga Testudo',
       email: 'dunga@cabrero.com',
       senha: 'cabrunco',
       telefone: 40028922,
       linkedin: 'linkedin.com/mestredunga',
       ativo: true,
-      redefin: null,
       createdAt: new Date(),
       updatedAt: new Date()    
     }
