@@ -19,7 +19,8 @@ module.exports = {
       },
       senha: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        select: false
       },
       telefone: {
         allowNull: false,

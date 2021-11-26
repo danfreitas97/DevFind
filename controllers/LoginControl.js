@@ -3,6 +3,7 @@ const database = require('../models')
 const jwt = require('jsonwebtoken')
 const crypto = require('crypto')
 const mailer = require('../mailer.js')
+const secret = require('../config/auth.json')
 
 
 
@@ -24,7 +25,7 @@ class LoginControl {
                 .then( user => {
                  LoginControl.checkSenha(senha, user.senha).then((senhaValidada) => {
                     if(senhaValidada){
-                        const token = jwt.sign({sub:user.username}, 'notasecret', {expiresIn: 3600});
+                        const token = jwt.sign({sub:user.username}, secret, {expiresIn: 86400});
                         const body = {
                             user: user,
                             token: token
