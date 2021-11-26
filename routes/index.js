@@ -7,13 +7,13 @@ const admskill = require('./admSkills.js');
 
 module.exports = app => {
 
+    app.use(admskill)
     app.use(busca)
     app.use(cadastro)
-    app.use(perfil)
     app.use(login)
-    app.use(admskill)
+    app.use(perfil)
 
-    app.get('/', (req, res) => res.send('Tela Inicial'))
+    app.get('/', (req, res) => res.send('Bem vindo à API Dev.Find'))
 
 }
 

@@ -3,10 +3,10 @@ const LoginControl = require('../controllers/LoginControl')
 
 const router = Router();
 
-router.post('/login', LoginControl.login)
+router.post('/public/login', LoginControl.login)
 
-router.post('/esqueci-senha', LoginControl.esqueciSenha)
+router.post('/public/esqueci-senha', LoginControl.esqueciSenha)
 
-router.post('/resetar-senha', LoginControl.resetarSenha)
+router.post('/public/resetar-senha', LoginControl.resetarSenha)
 
 module.exports = router

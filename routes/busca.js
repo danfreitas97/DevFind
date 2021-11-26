@@ -5,14 +5,14 @@ const UserSkillsControl = require('../controllers/UserSkillsControl.js');
 
 const router = Router();
 
-router.get('/busca/user', UsersControl.selectAllUsers)
+router.get('/public/busca/user', UsersControl.selectAllUsers)
 
-router.get('/busca/user/:user', UsersControl.selectOneUsers)
+router.get('/public/busca/user/:user', UsersControl.selectOneUsers)
 
-router.get('/busca/skill', UserSkillsControl.selectAllUserSkills)
+router.get('/public/busca/skill', UserSkillsControl.selectAllUserSkills)
 
-router.get('/busca/skill/:skill', UserSkillsControl.selectAllOneUserSkills)
+router.get('/public/busca/skill/:skill', UserSkillsControl.selectAllOneUserSkills)
 
-router.get('/busca/nivel/:nivel', NivelControl.selectAllOneLevels)
+router.get('/public/busca/nivel/:nivel', NivelControl.selectAllOneLevels)
 
 module.exports = router

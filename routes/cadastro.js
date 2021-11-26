@@ -4,7 +4,7 @@ const UserSkillsControl = require('../controllers/UserSkillsControl.js');
 
 const router = Router();
 
-router.post('/cadastro', UsersControl.createUsers)
+router.post('/public/cadastro', UsersControl.createUsers)
 
 router.post('/cadastro/skills', UserSkillsControl.addUserSkills)
 
